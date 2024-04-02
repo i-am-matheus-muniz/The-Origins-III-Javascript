@@ -16,7 +16,12 @@ function median(viewsArray) {
     let sortedStats = 0;
     let middleIndex = 0;
     
-    viewsArray.sort();
+    sortedStats = viewsArray.sort((a, b) => a - b);
+    middleIndex = Math.floor(sortedStats.length / 2);
+
+    console.log("The sorted array now is: " + sortedStats);
+    console.log("The middle index of it is: " + viewsArray[middleIndex]);
 }
 
 mean(recentTikTokViews);
+median(recentTikTokViews);
