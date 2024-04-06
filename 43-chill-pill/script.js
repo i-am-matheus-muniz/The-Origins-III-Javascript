@@ -10,8 +10,18 @@ const quoteList = [
   
   const colors = ["#e81416", "#ffa500", "#faeb36", "#79c314", "#487de7", "#4b369d", "#70369d"];
 
-  let wrapperDiv = document.getElementById("#wrapper").querySelector("div");
+  let wrapperDiv = document.getElementById("wrapper");
 
-  let quoteText = document.getElementById("#quote-text").querySelector("p");
+  let quoteText = document.getElementById("quote-text");
 
-  let quoteButton = document.getElementById("#quote-button").querySelector("id");
+  let quoteButton = document.getElementById("quote-button");
+
+  quoteButton.addEventListener("click", function() {
+    let randomIndex = Math.floor(Math.random() * quoteList.length);
+    let randomQuote = quoteList[randomIndex];
+
+    quoteText.textContent = randomQuote;
+
+    wrapperDiv.style.backgroundColor = colors[randomIndex];
+    
+  });
